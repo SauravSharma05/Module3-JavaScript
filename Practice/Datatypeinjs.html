@@ -11,19 +11,66 @@
     <h1>Datatype in JavaScript</h1>
     <pre>
         1. primitive datatype
-        a. number
-        b. string
-        c. boolean
-        d. null
-        e. bigInt
-        f. Undefined
 
+        a. number
+        eg : 
+                let a=10;       // normal integer value
+        
+        b. string
+        eg : 
+                let name = "sam";       //normal string or any single character
+
+        c. symbol
+        eg  :
+                let a = symbol("hello");    // fixed value for specific variable
+
+        d. null
+        eg : 
+                let a = null;           // null value, but takes space, or can be filled afterwards
+
+        e. bigInt
+        eg : 
+                let a=10255n;       // very large integer value
+
+        f. Undefined
+        eg : 
+                let a;
+                console.log(a);         // not defined above 
+
+        g. Boolean
+        eg : 
+                let a = true;           // true value
+                let a = false;           // false value
 
 
         2. primitive datatype
 
         a. array 
+        eg : 
+                let a = [ 'hello', 'hi', 'bye', { age : 21} ];
+                or
+                let a = array( 1 , 2 , 3 );
+
+                console.log(a);                 all values in the array "a"
+                console.log(a.length);          // 4    size of array
+                console.log(a[2]);              // bye   value on 2nd index in array
+                console.log(a[3].age);          // 21      object in array, whose key is 'age' and value is 21
+
         b. object
+        eg : 
+
+            - key and value pair
+
+            let hello = 
+                            {
+                                name : "sam",
+                                gender : "male",
+                                age : "21",
+                            }
+
+                console.log(hello);
+                console.log(hello.name);
+                console.log(hello.email);
     </pre>
     
 </body>
