@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        *{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: white;
+            text-align: center;
+            background-image: linear-gradient(to right, #141e30, #243b55);
+        }
+        h1{
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+        <h1>RELOAD THE PAGE TO PLAY THE PROMPT GAME</h1>
+
+
+        <script>
+            alert('welcome to the game of request 😎');
+
+            if (confirm('register your details first ...! 📑')) {
+                alert(`nice let's start 😂`);
+
+                let detail = prompt('your name is ?')
+                if (detail) {
+                    alert(`nice welcome `+detail+' 🤝');
+
+                    alert('now game rules are  . . .');
+                    alert('there are no rules 😈');
+                    alert('ok then moving further on');
+
+                    if (confirm('you know i am a good person')) {
+                        alert('nice you know me well 🥰');
+                    } else {
+                        alert('how dare you 🤬');
+                    }
+                }
+                else if(detail==null){
+                    alert(`why not entering detail ❓`);
+                }
+            }
+            else{
+                alert('ok bye then, you are not good 🤬');
+            }
+        </script>
+
+</body>
+</html>
