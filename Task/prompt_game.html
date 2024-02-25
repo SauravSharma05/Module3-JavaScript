@@ -18,24 +18,36 @@
 </head>
 <body>
         <h1>RELOAD THE PAGE TO PLAY THE PROMPT GAME</h1>
-
-
         <script>
             alert('welcome to the game of request 😎');
 
             if (confirm('register your details first ...! 📑')) {
                 alert(`nice let's start 😂`);
-
                 let detail = prompt('your name is ?')
                 if (detail) {
                     alert(`nice welcome `+detail+' 🤝');
-
                     alert('now game rules are  . . .');
                     alert('there are no rules 😈');
                     alert('ok then moving further on');
-
                     if (confirm('you know i am a good person')) {
                         alert('nice you know me well 🥰');
+                        alert('now next question ..!');
+
+                        if(confirm('can we be friends'))
+                        {
+                            alert('milestone achieved ...! game completed');
+                        }
+                        else {
+                            if(confirm('your sure ..?'))
+                            {
+                                alert('sorry there is no going back now');
+                            }
+                            else{
+                            alert('great milestone achieved ...! game completed');
+                            }
+
+                        }
+
                     } else {
                         alert('how dare you 🤬');
                     }
