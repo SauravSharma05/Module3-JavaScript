@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product card using JS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            height: 250px;
+            width: 180px;
+            border: 2px solid black;
+            background-color: lightcyan;
+            font-size: 20px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+        #box{
+            display: flex;
+            width: 90%;
+            margin: 50px auto;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box"></div>
+    <script>
+
+            let obj = {
+            mens_wear : 'Men',
+            womens_wear : 'Women',
+            kids_wear : 'Kids',
+        }
+        
+        for (const key in obj) {                                
+            // document.write(key + ' : ' + obj[key]+ '<br>'); 
+
+            let node = document.createElement('div')                            
+            let textNode = document.createTextNode(obj[key])
+            node.appendChild(textNode)
+            document.getElementById('box').appendChild(node)
+        }
+        
+            // let arr = [10,20,30,40,50,60,70,80,90,100]
+
+            // arr.forEach(element => {
+
+            // let node = document.createElement('div')
+            // let textNode = document.createTextNode('Namaste Bharat' + ' ' + element)
+            // node.appendChild(textNode)
+            // document.getElementById('box').appendChild(node)
+// });
+    </script>
+</body>
+</html>
