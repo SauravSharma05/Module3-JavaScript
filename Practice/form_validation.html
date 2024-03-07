@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <h1>Form Validation</h1>
+    
+    <input type="text" id="uname" onblur="handleValidation(this, 'error1')" /> <br>
+    <span id="error1"></span> <br>
+    <input type="text" id="fname" onblur="handleValidation(this, 'error2')" />
+    <span id="error2"></span> 
+    <br />
+    <br />
+
+    <input type="text" id="upass" />
+
+    <button>Submit</button>
+
+    <script>
+      function handleValidation(hi, hello) {
+        let unameData = document.getElementById("uname");
+
+        if (unameData.value == ""){
+          console.log("Empty");
+          document.getElementById(hello).innerText = 'Empty'
+          document.getElementById(hello).style.color = 'red'
+        } else {
+            console.log("kuchToHai");
+            console.log(unameData.value);
+            document.getElementById(hello).innerText = ''
+        }
+      }
+    </script>
+  </body>
+</html>
