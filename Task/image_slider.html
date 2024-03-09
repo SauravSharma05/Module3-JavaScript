@@ -53,26 +53,42 @@
             
         </div>
         <div class="button">
-            <button id="prev" onclick="move()">Prev</button>
+            <button id="prev" onclick="prev()">Prev</button>
             <button id="for" onclick="move()">For</button>
         </div>
     </div>
 
 
     <script>
-        let a = [
+
+         a = [
                     "images/logomyntra.png",
                     "images/imgbox3.webp",
                     "images/blog_poster.png",
                 ]
-        
-        console.log(a[0]);
-        console.log(a[1]);
-        console.log(a[2]);
 
-        function move()
-        {
+        img = document.getElementById('img1');
+                
+                
+        function prev()
+        {   
+            i=0;
+            while (a.length>i)
+             {    
+                img.src = a[i];                 
+                i++;
+            }
             
+            // for (let index = 0; index < a.length; index++) 
+            // {
+            //     img.src = a[index];                 
+            // }
+                
+        }
+            
+            function move()
+        {
+            img.src = a[0];          
         }
     </script>
 </body>
