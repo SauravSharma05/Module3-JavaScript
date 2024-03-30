@@ -18,6 +18,7 @@
             <button id="sub" onclick="sub()">Subtract</button>
             <button id="mul" onclick="mul()">Multiply</button>
             <button id="div" onclick="div()">Divide</button>
+            <button id="div" onclick="mod()">Modulus</button>
         </div>
         <div id="ans1"></div>
     </div>
@@ -51,6 +52,13 @@
             a = document.getElementById('inp1').value;
             b = document.getElementById('inp2').value;
             c = a/b;
+            document.getElementById("ans1").innerText = c;
+        }
+        function mod()
+        {
+            a = document.getElementById('inp1').value;
+            b = document.getElementById('inp2').value;
+            c = a%b;
             document.getElementById("ans1").innerText = c;
         }
     </script>
