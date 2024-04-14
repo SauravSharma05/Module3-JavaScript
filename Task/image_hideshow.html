@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box1, .box2{
+            height: 300px;
+            width: 300px;
+            border: 1px solid black;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+        }
+        .mainbox{
+        display: flex;
+        }
+        button{
+            height: 30px;
+            width: 200px;
+            background-color: black;
+            color: white;
+        }
+        #img3{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainbox">
+
+    <div class="box1">
+        <img src="" id="img1" alt="" srcset="">
+        <button onclick="show()">show</button>
+    </div>
+    <div class="box1">
+        <img src="../Task/images/blog_poster.png" id="img2" alt="" srcset="">
+        <button onclick="hide()">hide</button>
+    </div>
+    <div class="box2">
+        <img src="../Task/images/blog_poster.png" id="img3" alt="" srcset="">
+    </div>
+    <button onclick="toggle()">toggle</button>
+</div>
+
+<script>    
+    imgA = document.getElementById('img1')
+    imgB = document.getElementById('img2')
+    imgC = document.getElementById('img3')
+
+    function show()
+    {
+        imgA.src = "../Task/images/blog_poster.png";
+    }
+    function hide()
+    {
+        imgB.src = "";
+    }
+    function toggle()
+    {
+        if(imgC.style.display == "none")
+        {
+            imgC.style.display ="block"
+        }
+        else
+        {
+            imgC.style.display ="none"
+        }
+
+                                                // match function use to match media     img.src.match('img.jpg');
+        }
+</script>
+</body>
+</html>
