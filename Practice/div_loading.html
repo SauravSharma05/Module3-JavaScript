@@ -14,6 +14,9 @@
     </style>
 </head>
 <body> 
+
+    <div class="mainbox">
+
     <div class="box">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nesciunt, delectus libero inventore quod obcaecati voluptatum repellendus vel. Vero cum sunt accusamus officiis rerum veniam quaerat. Neque cupiditate voluptas maxime!
     </div>
@@ -100,15 +103,29 @@
     </div>
     <div class="box">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nesciunt, delectus libero inventore quod obcaecati voluptatum repellendus vel. Vero cum sunt accusamus officiis rerum veniam quaerat. Neque cupiditate voluptas maxime!
+    </div>
+
     </div>
 
     <script>
 
+        mainbox = document.querySelectorAll('.mainbox');
         boxa = document.querySelectorAll('.box');
 
+        console.log(Math.ceil((mainbox.clientHeight)));
         // console.log(boxa);
 
-        
+        mainbox.onscroll = () => { 
+                if (isLoading) return; 
+            
+                if ( 
+                    Math.ceil(mainbox.clientHeight  
+                        + mainbox.scrollTop) >= 
+                        mainbox.scrollHeight 
+                ) { 
+                    pageNum++; 
+                } 
+            }; 
 
 
     </script>
