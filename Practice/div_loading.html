@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .mainbox{
+            flex-wrap: wrap;
+            overflow: scroll;
+            display: flex;
+            height: 500px;
+            border: 3px solid black;
+        }
         .box{
-                border: 1px solid black;
+            border: 1px solid black;
                 width: 60%;
                 margin: 20px auto;
                 padding: 10px;
@@ -115,17 +122,17 @@
         console.log(Math.ceil((mainbox.clientHeight)));
         // console.log(boxa);
 
-        mainbox.onscroll = () => { 
-                if (isLoading) return; 
+        // mainbox.onscroll = () => { 
+        //         if (isLoading) return; 
             
-                if ( 
-                    Math.ceil(mainbox.clientHeight  
-                        + mainbox.scrollTop) >= 
-                        mainbox.scrollHeight 
-                ) { 
-                    pageNum++; 
-                } 
-            }; 
+        //         if ( 
+        //             Math.ceil(mainbox.clientHeight  
+        //                 + mainbox.scrollTop) >= 
+        //                 mainbox.scrollHeight 
+        //         ) { 
+        //             pageNum++; 
+        //         } 
+        //     }; 
 
 
     </script>

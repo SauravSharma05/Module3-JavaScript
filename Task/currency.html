@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            width: 50%;
+            margin: 30px auto;
+            border: 3px solid black;
+            padding: 20px;
+        }
+        #res{
+            font-size: 30px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+
+    <select name="val1" id="val1">
+        <option value="1">INR</option>
+        <option value="1">DOLLAR</option>
+    </select>
+    <br>
+    <br>
+    <span>enter value 1</span>
+    <input type="text" name="inp1" id="inp1">
+    
+    <br>
+    <br>
+    <select name="val2" id="val2">
+        <option value="83">INR</option>
+        <option value="0.012">DOLLAR</option>
+    </select>
+    <br>
+    <br>
+    
+    <button id="but" onclick="c1()">calculate</button>
+    <br>
+    <br>
+    <span id="res"></span>
+
+
+</div>
+
+
+    <script>
+
+
+        function c1()
+        {
+            inp1 = document.querySelector('#inp1').value
+            val1 = document.querySelector('#val1').value
+            val2 = document.querySelector('#val2').value    
+
+
+            tval1 = Math.ceil(parseInt(inp1))*Math.ceil(parseInt(val1))*Math.ceil(parseInt(val2))
+            console.log("total : "+tval1);
+
+            document.getElementById('res').innerHTML = tval1           
+        }
+
+        
+
+    </script>
+</body>
+</html>
