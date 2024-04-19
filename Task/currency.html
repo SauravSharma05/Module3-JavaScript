@@ -28,7 +28,6 @@
 
     <select name="val1" id="val1">
         <option value="1">INR</option>
-        <option value="1">DOLLAR</option>
     </select>
     <br>
     <br>
@@ -38,8 +37,10 @@
     <br>
     <br>
     <select name="val2" id="val2">
-        <option value="83">INR</option>
         <option value="0.012">DOLLAR</option>
+        <option value="0.011">EURO</option>
+        <option value="1.13">RUBLE</option>
+        <option value="0.016">CANADIAN DOLLAR</option>
     </select>
     <br>
     <br>
@@ -58,15 +59,20 @@
 
         function c1()
         {
-            inp1 = document.querySelector('#inp1').value
             val1 = document.querySelector('#val1').value
-            val2 = document.querySelector('#val2').value    
+            val2 = document.querySelector('#val2').value
+            input1 = document.querySelector('#inp1').value
+            
+            input1val = parseInt(input1) 
+            val1a = parseInt(val1) 
+            val2a = parseInt(val2) 
 
-
-            tval1 = Math.ceil(parseInt(inp1))*Math.ceil(parseInt(val1))*Math.ceil(parseInt(val2))
+            tval1 = Math.ceil(input1val*val1a*val2a)
+            
             console.log("total : "+tval1);
-
-            document.getElementById('res').innerHTML = tval1           
+            document.getElementById('res').innerHTML = tval1     
+            
+            
         }
 
         
