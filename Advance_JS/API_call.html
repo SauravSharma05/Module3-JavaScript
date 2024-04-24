@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        img{
-            height: 80px;
-            width: 80px;
-        }
+    <link rel="stylesheet" href="table.css">
+        
     </style>
 </head>
 <body>
-
-    <table id="tdtable">
-        <thead>
-            <tr>
+    
+    <div class="mainbox">
+        <table id="tdtable">
+            <thead>
+                <tr>
                 <th>Sno</th>
                 <th>Title</th>
                 <th>Image</th>
@@ -23,19 +21,23 @@
         </thead>
         <tbody id="tdbody"></tbody>
     </table>
+    </div>  
+
+    <!-- <div id="hello"></div> -->
 
     <script>
-
+       const hello1 = document.getElementById('hello')
+        
         fetch("https://jsonplaceholder.typicode.com/photos")
         .then((res)=>{return res.json()})
         .then((data)=> {
-            
+            // var hi = ""
             const tableb = document.getElementById('tdbody');
                 data.forEach(item => {
 
                     const row = document.createElement('tr');               //create element : creates a element
+                    
                     const id1 = document.createElement('td');
-
                     id1.textContent = item.id;                             //text content :  we can put any content in the created Element
                     row.appendChild(id1);
 
@@ -50,10 +52,21 @@
                     row.appendChild(url1);
 
                     tableb.appendChild(row);
-            
-                        })
-                    });    
+                    
+                    // console.log(item.id);
+
                    
+
+                    // hi += `
+                    //        <li>${item.id}</li>
+                    // `
+                    
+                })
+                
+                    // hello1.innerHTML=  hi
+                        
+                    });    
+                    
 
         
 

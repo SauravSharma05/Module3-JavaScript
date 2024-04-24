@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+
+    <div class="mainbox">
+    <table id="tb">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Dept</th>
+        </tr>
+        <tbody id="hi"></tbody>
+    </table>
+
+</div>
+
+    <script>
+
+        fetch('hello.json')
+        .then((response)=>{return response.json()})
+        .then((data)=>{
+
+            console.log(data);
+
+            const tbl = document.getElementById('hi')
+
+            data.forEach((value)=>
+            {
+                // console.log(value.name);
+                const trow = document.createElement('tr')
+                
+                const tdatanm = document.createElement('td')
+                tdatanm.textContent = value.name
+                trow.appendChild(tdatanm);
+                
+                const tdataage = document.createElement('td')
+                tdataage.textContent = value.age
+                trow.appendChild(tdataage);
+                
+                const tdatadept = document.createElement('td')
+                tdatadept.textContent = value.dept
+                trow.appendChild(tdatadept);
+                
+                tbl.appendChild(trow);
+                // console.log(value);
+
+            }
+
+            )
+        })
+
+    </script>
+    
+</body>
+</html>

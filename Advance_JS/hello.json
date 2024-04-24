@@ -1,0 +1,18 @@
+[
+{
+    "name": "sam",
+    "age": 21,
+    "dept": "haha"
+},
+{
+    "name": "shyam",
+    "age": 25,
+    "dept": "hi"
+},
+{
+    "name": "pam",
+    "age": 55,
+    "dept": "bye"
+}
+
+]
