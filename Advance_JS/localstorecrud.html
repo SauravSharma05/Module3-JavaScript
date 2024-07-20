@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="form">
+        ID: <input type="text" id="id"><br>
+        Name: <input type="text" id="name"><br>
+        Age: <input type="text" id="age"><br>
+        Address: <input type="text" id="address"><br>
+        Phone: <input type="text" id="phone"><br>
+         <button type="button" onclick="save()">Add</button><br>
+        
+    </form>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>name</th>
+                <th>age</th>
+                <th>address</th>
+                <th>phone</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody id="table">
+
+        </tbody>
+    </table>
+
+    <script>
+         
+        function save()
+        {
+
+             data = JSON.parse( localStorage.getItem('xyz')) ?? [];
+
+             console.log(data.length);
+
+            data.length!=0 ?  data.findLast((value) => id = parseInt(value.id) ) : id=0;
+
+            
+           
+          
+           
+
+
+if((document.getElementById('id').value))
+{
+    data.forEach((v)=>{
+            console.log(v)
+            v.name = document.getElementById('name').value;
+            v.age = document.getElementById('age').value;
+            v.address = document.getElementById('address').value;
+            v.phone = document.getElementById('phone').value;
+           })
+}
+
+else 
+{
+    const obj = {
+              
+              id:id+1,//0+1
+              name:document.getElementById('name').value,
+              age:document.getElementById('age').value,
+              address:document.getElementById('address').value,
+              phone:document.getElementById('phone').value,
+          }
+
+          // console.log(obj)
+
+          data.push(obj);
+          // console.log(data)
+
+          localStorage.setItem('xyz',JSON.stringify(data));
+
+         data = JSON.parse( localStorage.getItem('xyz'));
+}
+           
+
+           
+           getAllData()
+
+        }
+
+        function getAllData()
+        {
+            table =  document.getElementById('table');
+            data = JSON.parse( localStorage.getItem('xyz'));
+            html = "";
+
+           data.forEach((v)=>{
+            html = html + `
+            <tr>
+                <td>${v.id}</td>
+                 <td>${v.name}</td>
+                  <td>${v.age}</td>
+                   <td>${v.address}</td>
+                    <td>${v.phone}</td>
+                    <td>
+                        <a href="">Edit</a>
+                        <a href="">Delete</a>
+                        </td>
+
+                </tr>
+            
+            `
+           })
+
+           document.getElementById('table').innerHTML = html;
+
+        }
+        getAllData()
+    </script>
+    
+</body>
+</html>
