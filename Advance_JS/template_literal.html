@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let name = "Alice";
+      let age = 25;
+
+      // Using template literals
+      let message = `Hello, my name is ${name} and I'm ${age} years old.`;
+      console.log(message); // Hello, my name is Alice and I'm 25 years old.
+
+      //   expression interpolation
+      let x = 5;
+      let y = 10;
+      console.log(`${x} + ${y} = ${x + y}`); // 5 + 10 = 15
+
+      //   Nesting in template literal
+      let outerTemplate = `Outer: ${(innerTemplate = `Inner: ${42}`)}`;
+      console.log(outerTemplate); // Outer: Inner: 42
+    </script>
+  </body>
+</html>
