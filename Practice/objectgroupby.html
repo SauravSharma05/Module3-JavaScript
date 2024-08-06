@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const teams = [
+        { name: "Man City", points: 63 },
+        { name: "Real Madrid", points: 50 },
+        { name: "Bayern Munich", points: 70 },
+        { name: "AC Milan", points: 59 },
+        { name: "Everton", points: 70 },
+      ];
+
+      // Group objects by points
+      const groupings = Object.groupBy(teams, (team) => {
+        return team.points > 60 ? "qualified" : "disqualified";
+      });
+
+      console.table(groupings);
+    </script>
+  </body>
+</html>
