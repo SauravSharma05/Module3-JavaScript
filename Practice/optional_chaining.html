@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const user = {
+        name: "Alice",
+        address: {
+          city: "Wonderland",
+        },
+      };
+
+      const city = user.address?.city; // "Wonderland"
+      const zipcode = user.address?.zipcode; // undefined
+
+      const user2 = {
+        name: "Bob",
+        getAddress() {
+          return { city: "Builderland" };
+        },
+      };
+
+      const address = user2.getAddress?.(); // { city: "Builderland" }
+      const phone = user2.getPhone?.(); // undefined
+
+      const users = [
+        { id: 1, profile: { name: "Alice" } },
+        { id: 2 },
+        { id: 3, profile: { name: "Bob" } },
+      ];
+
+      const names = users.map((user) => user.profile?.name || "Unknown");
+      console.log(names); // ["Alice", "Unknown", "Bob"]
+
+      const customer = {
+        name: "Carl",
+        details: {
+          age: 82,
+        },
+      };
+
+      // Attempting to access a non-existent property
+      const city2 = customer.details?.address?.city; // undefined
+
+      const scores = [90, 80, 70];
+
+      // Accessing an index safely
+      const firstScore = scores?.[0]; // 90
+      const fourthScore = scores?.[3]; // undefined
+
+      
+    </script>
+  </body>
+</html>
