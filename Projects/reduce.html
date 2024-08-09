@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Sample array of numbers
+      const numbers = [10, 20, 30, 40, 50];
+
+      const totalSum = numbers.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue;
+      }, 0);
+
+      console.log(`Total Sum: ${totalSum}`);
+
+      // Sample array of fruits
+      const fruits = [
+        "apple",
+        "banana",
+        "orange",
+        "apple",
+        "orange",
+        "banana",
+        "banana",
+      ];
+
+      const fruitCount = fruits.reduce((accumulator, fruit) => {
+        if (accumulator[fruit]) {
+          accumulator[fruit] += 1;
+        } else {
+          // Otherwise, initialize it to 1
+          accumulator[fruit] = 1;
+        }
+        return accumulator;
+          }, {}); 
+      console.log(fruitCount);
+    </script>
+  </body>
+</html>
