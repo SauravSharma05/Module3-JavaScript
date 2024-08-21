@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruits</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      #fruit-list {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+      }
+
+      #fruit-list li {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .btn:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fruits</h1>
+      <ul id="fruit-list"></ul>
+      <button class="btn" onclick="reverseArrayValue()">Reverse Fruits</button>
+      <button class="btn" onclick="shuffleFruits()">Shuffle Fruits</button>
+    </div>
+
+    <script>
+      var fruits = ["Apple", "Banana", "Cherry", "Date"];
+      var fruitList = document.getElementById("fruit-list");
+
+      function displayFruits() {
+        fruitList.innerHTML = "";
+        fruits.forEach(function (fruit) {
+          var li = document.createElement("li");
+          li.textContent = fruit;
+          fruitList.appendChild(li);
+        });
+      }
+
+      function reverseArrayValue() {
+        fruits.reverse();
+        displayFruits();
+      }
+
+      function shuffleFruits() {
+        for (var i = fruits.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          [fruits[i], fruits[j]] = [fruits[j], fruits[i]];
+        }
+        displayFruits();
+      }
+
+      displayFruits();
+    </script>
+  </body>
+</html>
