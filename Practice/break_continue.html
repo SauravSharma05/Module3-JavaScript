@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Classifier</title>
+  </head>
+  <body>
+    <button onclick="breakExample()" id="btnBreak">Break Example</button>
+    <button onclick="continueExample()" id="btnContinue">
+      Continue Example
+    </button>
+
+    <script>
+      function breakExample() {
+        for (let i = 0; i <= 15; i++) {
+          if (i === 10) {
+            console.log("Breaking the loop at number 10.");
+            break; // Exit the loop when i equals 10
+          }
+          if (i % 2 === 0) {
+            console.log(`${i} is an even number`);
+          } else {
+            console.log(`${i} is an odd number`);
+          }
+        }
+      }
+
+      function continueExample() {
+        for (let i = 0; i <= 15; i++) {
+          if (i === 10) {
+            console.log("Skipping number 10.");
+            continue; // Skip the rest of the loop iteration when i equals 10
+          }
+          if (i % 2 === 0) {
+            console.log(`${i} is an even number`);
+          } else {
+            console.log(`${i} is an odd number`);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
