@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Companies Sorter</title>
+  </head>
+  <body>
+    <p>Sort car company names in alphabetical order</p>
+    <p>Click the button to see the sorted car company names</p>
+    <button onclick="sortCarCompanies()" id="sortButton">Sort Cars</button>
+    <p id="sortedCars"></p>
+
+    <script>
+      var carCompanies = ["Toyota", "Ford", "Honda", "Chevrolet", "BMW"];
+      function sortCarCompanies() {
+        carCompanies.sort();
+        document.getElementById("sortedCars").innerHTML =
+          carCompanies.join(", ");
+      }
+    </script>
+  </body>
+</html>
