@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>
+      Utilizing the Math.max() and Math.min() methods, we can determine the
+      highest and lowest values in an array.
+    </p>
+    <p id="result"></p>
+
+    <script>
+      var scores = [40, 95, 70, 45, 75, 55];
+
+      document.getElementById("result").innerHTML = displayValues(scores);
+
+      function findMaxValue(arr) {
+        return Math.max(...arr); // Using spread syntax for better readability
+      }
+
+      function findMinValue(arr) {
+        return Math.min(...arr); // Using spread syntax for better readability
+      }
+
+      function displayValues(arr) {
+        const allValues = arr.join(", ");
+        const maxValue = findMaxValue(arr);
+        const minValue = findMinValue(arr);
+        return `Values: ${allValues} | Maximum: ${maxValue} | Minimum: ${minValue}`;
+      }
+    </script>
+  </body>
+</html>
