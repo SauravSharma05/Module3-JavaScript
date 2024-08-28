@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function fetchData(url) {
+        return new Promise((resolve, reject) => {
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", url);
+          xhr.onload = () => {
+            if (xhr.status === 200) {
+              resolve(JSON.parse(xhr.responseText)); 
+            } else {
+              reject("Error: " + xhr.status); 
+            }
+          };
+          xhr.onerror = () => reject("Network Error");
+          xhr.send();
+        });
+      }
+
+      // Using the fetchData function
+      fetchData("https://jsonplaceholder.typicode.com/posts")
+        .then((data) => {
+          console.log("Data fetched successfully:", data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    </script>
+  </body>
+</html>
