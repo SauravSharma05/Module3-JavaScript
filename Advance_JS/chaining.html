@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const books = [
+        {
+          title: "The Great Gatsby",
+          author: {
+            name: "F. Scott Fitzgerald",
+            contact: { email: "fitzgerald@example.com" },
+          },
+          publication: { year: 1925 },
+        },
+        {
+          title: "1984",
+          author: { name: "George Orwell" },
+        },
+        {
+          title: "To Kill a Mockingbird",
+          author: { name: "Harper Lee", contact: null },
+          publication: { year: 1960 },
+        },
+        {
+          title: "Moby Dick",
+        },
+      ];
+
+      function getBookDetails(book) {
+        const title = book.title || "Untitled";
+        const authorName = book.author?.name || "Unknown Author";
+        const authorEmail =
+          book.author?.contact?.email || "Email not available";
+
+        return `Title: ${title}, Author: ${authorName}, Contact: ${authorEmail}`;
+      }
+
+      books.forEach((book) => {
+        console.log(getBookDetails(book));
+      });
+    </script>
+  </body>
+</html>
