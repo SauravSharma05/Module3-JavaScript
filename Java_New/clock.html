@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Clock</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background-color: #e0f7fa;
+      }
+      #clock {
+        font-size: 48px;
+        color: #00796b;
+        margin-bottom: 20px;
+      }
+      #date {
+        font-size: 24px;
+        color: #004d40;
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #004d40;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock"></div>
+    <div id="date"></div>
+    <button id="toggleFormat">Switch to 12-Hour Format</button>
+    <script>
+      let is24HourFormat = true;
+
+      function updateClock() {
+        const now = new Date();
+        let hours = now.getHours();
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        const seconds = String(now.getSeconds()).padStart(2, "0");
+        if (!is24HourFormat) {
+          const period = hours >= 12 ? "PM" : "AM";
+          hours = hours % 12 || 12;
+          document.getElementById(
+            "clock"
+          ).textContent = `${hours}:${minutes}:${seconds} ${period}`;
+        } else {
+          hours = String(hours).padStart(2, "0");
+          document.getElementById(
+            "clock"
+          ).textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        const options = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        };
+        document.getElementById("date").textContent = now.toLocaleDateString(
+          undefined,
+          options
+        );
+      }
+
+      function toggleTimeFormat() {
+        is24HourFormat = !is24HourFormat;
+        document.getElementById("toggleFormat").textContent = is24HourFormat
+          ? "Switch to 12-Hour Format"
+          : "Switch to 24-Hour Format";
+        updateClock();
+      }
+
+      setInterval(updateClock, 1000);
+      updateClock();
+      document
+        .getElementById("toggleFormat")
+        .addEventListener("click", toggleTimeFormat);
+    </script>
+  </body>
+</html>
