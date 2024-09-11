@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function validateString() {
+        const inputString = document.getElementById("inputString").value;
+
+        if (inputString.trim() === "") {
+          alert("String cannot be empty!");
+          return;
+        }
+        const reversedString = inputString.split("").reverse().join("");
+        const isPalindrome = inputString === reversedString;
+        const charCount = {};
+        let hasDuplicates = false;
+        for (let i = 0; i < inputString.length; i++) {
+          const char = inputString[i];
+          if (charCount[char]) {
+            hasDuplicates = true;
+            break;
+          } else {
+            charCount[char] = true;
+          }
+        }
+        alert(`
+    Length: ${inputString.length}
+    Is Empty/Whitespace: ${inputString.trim() === ""}
+    Is Palindrome: ${isPalindrome}
+    Has Duplicates: ${hasDuplicates}
+  `);
+      }
+    </script>
+  </body>
+</html>
