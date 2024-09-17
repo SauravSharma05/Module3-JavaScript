@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #scroll-container {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+      }
+
+      #scroll-text {
+        display: inline-block;
+        animation: scroll 15s linear infinite;
+      }
+
+      @keyframes scroll {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="scroll-container">
+      <div id="scroll-text">
+        This is a long paragraph of text that will scroll continuously across
+        the screen. You can replace this text with any content you want to
+        display.
+      </div>
+    </div>
+
+    <script>
+      const scrollText = document.getElementById("scroll-text");
+
+      function setScrollSpeed(speed) {
+        scrollText.style.animationDuration = speed + "s"; 
+      }
+
+      setScrollSpeed(30);
+    </script>
+  </body>
+</html>
